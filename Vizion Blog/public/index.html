@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vizion Blog</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Roboto|Merienda|Kenia|Oxygen|BungeeInline|Montserrat|Gotham">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
+    <!--Remix icons-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Bootstrap css-->
+    
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- Swiper.js styles -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <!--custom styles-->
+    <link rel="stylesheet" href="./main.css">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.9.2/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.9.2/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.9.2/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.9.2/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.9.2/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.9.2/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.9.2/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.9.2/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.9.2/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.9.2/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+   <style>
+
+
+   </style>
+
+  </head>
+  <body>
+    <!--header-->
+    <header class="header" id="header">
+
+        <nav class="navbar container">
+            
+            <a href="index.html">
+                <h2 class="logo">VIZION</h2>
+            </a>
+
+            <div class="menu" id="menu">
+                <ul class="list">
+                    <li class="list-item">
+                        <a href="#" class="list-link current">Home</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link">Categories</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link">Reviews</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link">News</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link">Membership</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link">Contact</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link screen-lg-hidden">Login</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link screen-lg-hidden">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="list list-right">
+                <button class="btn place-items-center" id="theme-toggle-btn">
+                    <i class="ri-sun-line sun-icon"></i>
+                    <i class="ri-moon-line moon-icon"></i>
+                </button>
+
+                <button class="btn place-items-center" id="search-icon">
+                    <i class="ri-search-line"></i>
+                </button>
+
+                <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-icon">
+                    <i class="ri-menu-3-line open-menu-icon"></i>
+                    <i class="ri-close-line close-menu-icon"></i>
+                </button>
+
+                <a href="#" class="list-link screen-sm-hidden">Login</a>
+                <a href="#" class="list-link screen-sm-hidden btn sign-up-btn fancy-border">
+                    <span>Sign Up</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!--search-->
+    <div class="search-form-container container" id="search-form-container">
+
+        <div class="form-container-inner">
+
+            <form action="" class="form">
+                <input type="text" class="form-input" placeholder="Type in what you want">
+                <button class="btn form-btn" type="submit">
+                    <i class="ri-search-line"></i>
+                </button>
+            </form>
+            <span class="form-note">or press ESC to close</span>
+        </div>
+
+        <button class="btn form-close-btn place-item-center" id="form-close-btn">
+            <i class="ri-close-line"></i>
+        </button>
+    </div>
+
+    <!-- introduction -->
+    <section class="intro">
+        <p class="intro-title">Vizion Infinite</p>
+        <p class="intro-blog-title"><i class="ri-double-quotes-l"></i><span class="intro-blog-title-span">Blog</span><i class="ri-double-quotes-r"></i></p>
+        <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Nulla adipisci mollitia dolore molestias, itaque et!</h4>
+    </section>
+
+    <!--featured articles-->
+    <section class="featured-articles section-header-offset">
+
+        <div class="featured-articles-container container d-grid">
+
+            <div class="featured-content d-grid">
+
+                <div class="headline-banner">
+                    <h3 class="headline fancy-border">
+                        <span class="place-items-center">Your News<br> Today</span>
+                    </h3>
+                    <span class="headline-description">Vizion is here to stay</span>
+
+                </div>
+
+                <a href="./skyscrapper.html" class="article featured-article featured-article-1">
+                    <img src="./skyscrapers.jpg" alt="" class="article-image">
+                    <span class="article-category">Buildings</span>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>12 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="article featured-article featured-article-2">
+                    <img src="./Sonic 2.jpg" alt="" class="article-image">
+                    <span class="article-category">Movies</span>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>15 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">New sonic sequel released on cinema</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="article featured-article featured-article-3">
+                    <img src="./Dark Logo 3.jpg" alt="" class="article-image">
+                    <span class="article-category">Graphics</span>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>23 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Is graphics Design Most common among youths nowadays?</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="article featured-article featured-article-4">
+                    <img src="./hair model.jpg" alt="" class="article-image">
+                    <span class="article-category">Fashion</span>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>31 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">A norm amongst ladies. Is this the most trending style?</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="article featured-article featured-article-5">
+                    <img src="./meeting.jpg" alt="" class="article-image">
+                    <span class="article-category">Technology</span>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>33 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Learn how to develop social media bots</h3>
+                    </div>
+                </a>
+
+
+
+            </div>
+            <!-- sidebar -->
+            <div class="sidebar d-grid">
+                <h3 class="title featured-content-title">What's Trending</h3>
+
+                <a href="#" class="trending-news-box">
+                    <div class="trending-news-image-box">
+                    <div class="trending-number-box">
+                        <span class="trending-number place-items-center">1</span>
+                    </div>
+                        <img src="./batman.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>33 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Batman Sequel Production Begins</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="trending-news-box">
+                    <div class="trending-news-image-box">
+                    <div class="trending-number-box">
+                        <span class="trending-number place-items-center">2</span>
+                    </div>
+                        <img src="./her.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>35 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Ladies in Tech</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="trending-news-box">
+                    <div class="trending-news-image-box">
+                        <div class="trending-number-box">
+                            <span class="trending-number place-items-center">3</span>
+                        </div>
+                        <img src="./vizion Hair Photography sample.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>39 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Vizion Photography Center Opens in Nigeria</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="trending-news-box">
+                    <div class="trending-news-image-box">
+                        <div class="trending-number-box">
+                            <span class="trending-number place-items-center">4</span>
+                        </div>
+                        <img src="./Water Bridge.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>45 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Water Bridge Gate: Highest grossing chinese movie of 2022 </h3>
+                    </div>
+                </a>
+
+                <a href="#" class="trending-news-box">
+                    <div class="trending-news-image-box">
+                        <div class="trending-number-box">
+                            <span class="trending-number place-items-center">5</span>
+                        </div>
+                        <img src="./joker.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>51 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Unseen Behind the scene photos of Joaquin the Joker</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--quick read-->
+    <section class="quick-read section">
+
+        <div class="container">
+
+            <h2 class="title section-title" data-name="Quick read">Quick Read</h2>
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                    <a href="#" class="article swiper-slide">
+                        <img src="./hair model2.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                        
+                            <div class="article-data">
+                                <span>June 5th, 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>12 mins ago</span>
+                            </div>
+    
+                            <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        </div>
+                    </a>
+
+                    <a href="#" class="article swiper-slide">
+                        <img src="./MoM.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                        
+                            <div class="article-data">
+                                <span>June 5th, 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>12 mins ago</span>
+                            </div>
+    
+                            <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        </div>
+                    </a>
+
+                    <a href="#" class="article swiper-slide">
+                        <img src="./skyscraper.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                        
+                            <div class="article-data">
+                                <span>June 5th, 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>12 mins ago</span>
+                            </div>
+    
+                            <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        </div>
+                    </a>
+
+                    <a href="#" class="article swiper-slide">
+                        <img src="./Vizion space 2.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                        
+                            <div class="article-data">
+                                <span>June 5th, 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>12 mins ago</span>
+                            </div>
+    
+                            <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        </div>
+                    </a>
+
+                    <a href="#" class="article swiper-slide">
+                        <img src="./EEAAO.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                        
+                            <div class="article-data">
+                                <span>June 5th, 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>12 mins ago</span>
+                            </div>
+    
+                            <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        </div>
+                    </a>
+
+                    <a href="#" class="article swiper-slide">
+                        <img src="./Screenshot_20220504-194802_Chrome.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+                        
+                            <div class="article-data">
+                                <span>June 5th, 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>12 mins ago</span>
+                            </div>
+    
+                            <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="swiper-button-prev swiper-controls"></div>
+                <div class="swiper-button-next swiper-controls"></div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!--older post-->
+    <section class="older-posts section">
+
+        <div class="container">
+
+            <h2 class="title section-title" data-name="Yeah, You might have">You Might Have Missed This</h2>
+
+            <div class="older-posts-grid-wrapper d-grid">
+
+                <a href="#" class="article d-grid">
+                    <div class="older-posts-article-image-wrapper">
+                        <img src="./Ambulance.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>12 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        <p class="article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere ea quibusdam quis commodi officia.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="article d-grid">
+                    <div class="older-posts-article-image-wrapper">
+                        <img src="./her.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>12 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        <p class="article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere ea quibusdam quis commodi officia.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="article d-grid">
+                    <div class="older-posts-article-image-wrapper">
+                        <img src="./meeting.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>12 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        <p class="article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere ea quibusdam quis commodi officia.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="article d-grid">
+                    <div class="older-posts-article-image-wrapper">
+                        <img src="./hair model.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>12 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        <p class="article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere ea quibusdam quis commodi officia.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="article d-grid">
+                    <div class="older-posts-article-image-wrapper">
+                        <img src="./Dark Logo 3.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>12 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        <p class="article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere ea quibusdam quis commodi officia.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="article d-grid">
+                    <div class="older-posts-article-image-wrapper">
+                        <img src="./batman.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>12 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        <p class="article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere ea quibusdam quis commodi officia.</p>
+                    </div>
+                </a>
+
+                <a href="#" class="article d-grid lone-grid lone-grid-7">
+                    <div class="older-posts-article-image-wrapper">
+                        <img src="./skyscraper.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="article-data-container">
+                        
+                        <div class="article-data">
+                            <span>June 5th, 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>12 mins ago</span>
+                        </div>
+
+                        <h3 class="title article-title">Will building High-rises limits population growth Havoc?</h3>
+                        <p class="article-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo facere ea quibusdam quis commodi officia.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="see-more-container" style="color:brown">
+                <a href="#" class="btn see-more-btn place-items-center">
+
+                    View More <i class="ri-arrow-right-circle-line"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--popular tags-->
+    <section class="popular-tags section">
+
+        <div class="container">
+
+            <h2 class="title section-title" data-name="Popular tags">Popular tags</h2>
+
+            <div class="popular-tags-container d-grid">
+
+                <a href="#" class="article">
+                    <span class="tag-name"><i class="ri-archive-line"></i>Movies</span>
+                    <img src="./batman.jpg" alt="" class="article-image">
+                </a>
+
+                <a href="#" class="article">
+                    <span class="tag-name"><i class="ri-archive-line"></i>Sports</span>
+                    <img src="./messi.webp" alt="" class="article-image">
+                </a>
+
+                <a href="#" class="article">
+                    <span class="tag-name"><i class="ri-archive-line"></i>Fashion</span>
+                    <img src="./fashion.png" alt="" class="article-image">
+                </a>
+
+                <a href="#" class="article">
+                    <span class="tag-name"><i class="ri-archive-line"></i>Technology</span>
+                    <img src="./technology.webp" alt="" class="article-image">
+                </a>
+
+                <a href="#" class="article">
+                    <span class="tag-name"><i class="ri-archive-line"></i>Education</span>
+                    <img src="./educate.jpg" alt="" class="article-image">
+                </a>
+
+                <a href="#" class="article">
+                    <span class="tag-name"><i class="ri-archive-line"></i>Art</span>
+                    <img src="./art.jpg" alt="" class="article-image">
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--newsletter-->
+    <section class="newsletter section">
+
+        <div class="container">
+
+            <h2 class="title section-title" data-name="Newsletter">Newsletter</h2>
+
+            <div class="form-container-inner">
+
+                <h6 class="title newsletter-title">Subscribe to <strong>VI</strong><em>Zion</em></h6>
+                <p class="newsletter-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+
+                <form action="" class="form">
+                    <input type="text" class="form-input" placeholder="Type in Your Email Address">
+                    <button class="btn form-btn" type="submit">
+
+                        <i class="ri-mail-check-fill"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer class="footer section">
+
+        <div class="footer-container container d-grid">
+
+            <div class="company-data">
+                <a href="index.html">
+                    <h2 class="logo">VIZION</h2>
+                </a>
+                <p class="company-description">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla quas totam harum tempore dolorem blanditiis ipsa, sunt at, eos amet veritatis aut! Tempore at qui veritatis optio sequi nam asperiores.
+                </p>
+
+                <ul class="list social-media">
+                    <li class="list-item">
+                        <a href="#" class="list-link">
+                            <i class="ri-whatsapp-fill"></i>
+                        </a>
+
+                        <a href="#" class="list-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+
+                        <a href="#" class="list-link">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+
+                        <a href="#" class="list-link">
+                            <i class="ri-reddit-fill"></i>
+                        </a>
+
+                        <a href="#" class="list-link">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+
+                        <a href="#" class="list-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+
+                        <a href="#" class="list-link">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <span class="copyright-notice">&copy; 2022 Vizion. copyrights all reserved</span>
+            </div>
+
+            <div>
+                <h6 class="title footer-title">Tags</h6>
+
+                <ul class="list footer-list">
+                    <li class="list-item">
+                        <a href="#" class="list-link">Movies</a>
+                    </li>
+
+                    <li class="list-item">
+                        <a href="#" class="list-link">Sports</a>
+                    </li>
+
+                    <li class="list-item">
+                        <a href="#" class="list-link">Fashion</a>
+                    </li>
+
+                    <li class="list-item">
+                        <a href="#" class="list-link">Technology</a>
+                    </li>
+
+                    <li class="list-item">
+                        <a href="#" class="list-link">Education</a>
+                    </li>
+
+                    <li class="list-item">
+                        <a href="#" class="list-link">Arts</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+            <h6 class="title footer-title">Company</h6>
+
+            <ul class="list footer-list">
+                <li class="list-item">
+                    <a href="#" class="list-link">Home</a>
+                </li>
+
+                <li class="list-item">
+                    <a href="#" class="list-link">Review</a>
+                </li>
+
+                <li class="list-item">
+                    <a href="#" class="list-link">News</a>
+                </li>
+
+                <li class="list-item">
+                    <a href="#" class="list-link">Membership</a>
+                </li>
+
+                <li class="list-item">
+                    <a href="#" class="list-link">Contact</a>
+                </li>
+
+                <li class="list-item">
+                    <a href="#" class="list-link">Other Company Links</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        </div>
+    </footer>
+
+
+    <!--swiper.js-->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!--bootstap js  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--custom script-->
+    <script src="./main.js"></script>
+    
+</body>
+</html>

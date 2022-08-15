@@ -1,0 +1,31 @@
+[debug] [2022-08-15T18:34:38.903Z] ----------------------------------------------------------------------
+[debug] [2022-08-15T18:34:38.906Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER PC\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2022-08-15T18:34:38.907Z] CLI Version:   11.6.0
+[debug] [2022-08-15T18:34:38.907Z] Platform:      win32
+[debug] [2022-08-15T18:34:38.907Z] Node Version:  v16.16.0
+[debug] [2022-08-15T18:34:38.909Z] Time:          Mon Aug 15 2022 19:34:38 GMT+0100 (West Africa Standard Time)
+[debug] [2022-08-15T18:34:38.909Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-08-15T18:34:39.062Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-08-15T18:34:39.062Z] > authorizing via signed-in user (okechukwuchibuikecollinsjr@gmail.com)
+[debug] [2022-08-15T18:34:39.063Z] [iam] checking project vizion-blog for permissions ["firebase.projects.get"]
+[debug] [2022-08-15T18:34:39.066Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/vizion-blog:testIamPermissions [none]
+[debug] [2022-08-15T18:34:39.067Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/vizion-blog:testIamPermissions x-goog-quota-user=projects/vizion-blog
+[debug] [2022-08-15T18:34:39.067Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/vizion-blog:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-08-15T18:34:40.875Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/vizion-blog:testIamPermissions 200
+[debug] [2022-08-15T18:34:40.876Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/vizion-blog:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-08-15T18:34:40.881Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/vizion-blog [none]
+[debug] [2022-08-15T18:34:41.692Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/vizion-blog 200
+[debug] [2022-08-15T18:34:41.693Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/vizion-blog {"projectId":"vizion-blog","projectNumber":"584436632627","displayName":"Vizion Blog","name":"projects/vizion-blog","resources":{"hostingSite":"vizion-blog"},"state":"ACTIVE","etag":"1_63d63fed-4e46-4096-8d31-fc7f7c13c2fd"}
+[info] 
+[info] === Serving from 'C:\Users\USER PC\Documents\Web Design\Vizion Blog'...
+[info] 
+[debug] [2022-08-15T18:34:41.713Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/vizion-blog/sites 
+[debug] [2022-08-15T18:34:43.742Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/vizion-blog/sites 200
+[debug] [2022-08-15T18:34:43.743Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/vizion-blog/sites {"sites":[{"name":"projects/vizion-blog/sites/vizion-blog","defaultUrl":"https://vizion-blog.web.app","appId":"1:584436632627:web:f8c13b97444a54e165a746","type":"DEFAULT_SITE"}]}
+[debug] [2022-08-15T18:34:43.745Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/vizion-blog/webApps/1:584436632627:web:f8c13b97444a54e165a746/config [none]
+[debug] [2022-08-15T18:34:45.175Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/vizion-blog/webApps/1:584436632627:web:f8c13b97444a54e165a746/config 200
+[debug] [2022-08-15T18:34:45.176Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/vizion-blog/webApps/1:584436632627:web:f8c13b97444a54e165a746/config {"projectId":"vizion-blog","appId":"1:584436632627:web:f8c13b97444a54e165a746","storageBucket":"vizion-blog.appspot.com","apiKey":"AIzaSyAm5Zvvpo_9jkHC5JRWDTz-02sINSRYUCM","authDomain":"vizion-blog.firebaseapp.com","messagingSenderId":"584436632627","measurementId":"G-5MXYZEK2ZW"}
+[warn] !  hosting: Port 5000 is not available. Trying another port... {"metadata":{"emulator":{"name":"hosting"},"message":"\u001b[33mhosting: \u001b[39mPort 5000 is not available. Trying another port..."}}
+[info] i  hosting: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5005 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5005\u001b[22m\u001b[24m"}}
